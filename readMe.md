@@ -1,0 +1,1 @@
+This project is about creating a shopping website with items that can entirely customed by the clients.
