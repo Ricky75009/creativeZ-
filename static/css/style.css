@@ -1,0 +1,36 @@
+@font-face {
+    
+    src: url("assets/fonts/FoundersGrotesk-Medium.woff") format("woff");
+    font-family: FGrotesk;
+}
+  
+
+
+body{
+background-color: #FFF7F7;
+}
+
+
+#logo{
+
+font-family: FGrotesk;
+font-style: normal;
+color: blue;
+font-weight: 500;
+font-size: 160px;
+line-height: 0px;
+position: absolute;
+left: 3%;
+bottom: 63%;
+
+}
+
+#sidebar{
+    position: absolute;
+    left: 66.67%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background-color: white;
+    box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
+}
