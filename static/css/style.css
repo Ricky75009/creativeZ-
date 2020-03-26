@@ -1,11 +1,11 @@
 @font-face {
     
-    src: url("fonts/founders-grotesk-test-medium.woff") format("woff");
+    src: url("../assets/fonts/founders-grotesk-test-medium.woff") format("woff");
     font-family: FGrotesk;
 }
 @font-face {
     
-    src: url("fonts/Akkurat-Mono.woff") format("woff");
+    src: url("../assets/fonts/Akkurat-Mono.woff") format("woff");
     font-family: Akkurat;
 }
   
