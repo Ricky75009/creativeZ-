@@ -50,6 +50,15 @@ bottom: 79%;
     background-color: white;
     box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
 }
+#sidebar_next{
+    position: absolute;
+    left: 100%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background-color: blue;
+    box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
+}
 
 #done {
     margin-top:69%;

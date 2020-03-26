@@ -2,6 +2,8 @@
 <head>
   <title>Catalogue Z+</title>
   
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
   <script async type="text/javascript" src="/static/javascript/script.js"></script>
 
@@ -9,7 +11,13 @@
 </head>
 <body>
 
-
+<script>
+$( "#clickme" ).click(function() {
+  $( "#book" ).slideToggle( "slow", function() {
+    // Animation complete.
+  });
+});
+</script>
 
 
 <div id="visualisator">
@@ -21,14 +29,13 @@
 
   <button type="submit";  id='done'; value ='done' >done</button>
 </div>
-
 </div>
   <div id="sidebar">
     <div id="container"; class='vertcenter'>
-    <div id='insidebar'><p><a href="https://www.w3schools.com/">pot selection</a></p></div>
-    <div id='insidebar'><p><a href="https://www.w3schools.com/">design</a></p></div>
-    <div id='insidebar'><p><a href="https://www.w3schools.com/">main color</a></p></div>
-    <div id='insidebar'><p><a href="https://www.w3schools.com/">secondary color</a></p></div>
+    <div id='insidebar'><p><a href="javascript:pot_selector();">pot selection</a></p></div>
+    <div id='insidebar'><p><a href="javascript:design_selector();">design</a></p></div>
+    <div id='insidebar'><p><a href="javascript:main_color_selctor();">main color</a></p></div>
+    <div id='insidebar'><p><a href="javascript:secondary_color_selector();">secondary color</a></p></div>
   </div>
 
   </div>
