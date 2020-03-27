@@ -32,10 +32,11 @@ bottom: 79%;
 #visualisator{
     position: absolute;
     left: 0%;
-    right: 33%;
+    right: 34%;
     top: 0%;
     bottom: 0%;
-     background-color: #FFF7F7; 
+    background-color: #FFF7F7; 
+
 
 
 
@@ -43,23 +44,33 @@ bottom: 79%;
 
 #sidebar{
     position: absolute;
-    left: 66.67%;
+    left: 66%;
     right: 0%;
     top: 0%;
     bottom: 0%;
     background-color: white;
     box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
 }
-#sidebar_next{
-    position: absolute;
-    display:none; 
-    left: 66.67%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    background-color: blue;
+.color-selector{
+    width: 490px;
+    right: -490px;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    transition: all .6s ease-in-out;
+    background-color: white;
     box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
+
 }
+.color-selector.show{
+    right: 0px;
+    background-color: white;
+    box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
+    transition: all .6s ease-in-out;
+  }
+
+
 
 #done {
     margin-top:69%;
@@ -83,6 +94,7 @@ bottom: 79%;
 }
 
 #share {
+
     margin-top:69%;
     background-color:#ffffff;
     border-radius:27px;

@@ -1,15 +1,12 @@
 function pot_selector(){
-   /* console.log("This in progress");
-    
-    var div = document.createElement('div');
-    div.textContent = " ";
-    div.setAttribute('id', 'sidebar');
-    document.body.appendChild(div);
+      $('.color-selector').toggleClass('show');
+      console.log('Maybe more')
 
-*/
+
 
     }
 
+console.log("ca marche")
 function design_selector(){
     var div = document.createElement('div');
     div.textContent = " ";
@@ -30,3 +27,15 @@ function secondary_color_selector(){
     div.setAttribute('id', 'sidebar');
     document.body.appendChild(div);
     }
+
+    /*
+$('#share').click(function () {
+
+      $('.menu-hide').toggleClass('show');
+      console.log('Maybe more')
+    });
+    $('close').click(function(){
+        
+      $('.menu-hide').removeClass('show');
+
+        });*/
