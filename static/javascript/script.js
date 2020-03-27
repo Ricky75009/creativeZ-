@@ -1,41 +1,17 @@
-function pot_selector(){
-      $('.color-selector').toggleClass('show');
-      console.log('Maybe more')
+function pot_selector() {
+    $('.pot-selector').toggleClass('show');
 
+}
 
+function design_selector() {
+    $('.design-selector').toggleClass('show');
+}
 
-    }
+function main_color_selector() {
+    $('.main_color-selector').toggleClass('show');
+}
 
-console.log("ca marche")
-function design_selector(){
-    var div = document.createElement('div');
-    div.textContent = " ";
-    div.setAttribute('id', 'sidebar');
-    document.body.appendChild(div);
-    }
+function secondary_color_selector() {
+    $('.secondary_color-selector').toggleClass('show');
+}
 
-function main_color_selector(){
-    var div = document.createElement('div');
-    div.textContent = " ";
-    div.setAttribute('id', 'sidebar');
-    document.body.appendChild(div);
-    }
-
-function secondary_color_selector(){
-    var div = document.createElement('div');
-    div.textContent = " ";
-    div.setAttribute('id', 'sidebar');
-    document.body.appendChild(div);
-    }
-
-    /*
-$('#share').click(function () {
-
-      $('.menu-hide').toggleClass('show');
-      console.log('Maybe more')
-    });
-    $('close').click(function(){
-        
-      $('.menu-hide').removeClass('show');
-
-        });*/
