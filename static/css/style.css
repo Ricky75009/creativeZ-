@@ -52,7 +52,8 @@ bottom: 79%;
 }
 #sidebar_next{
     position: absolute;
-    left: 100%;
+    display:none; 
+    left: 66.67%;
     right: 0%;
     top: 0%;
     bottom: 0%;
@@ -123,3 +124,5 @@ margin-bottom: 10px;
 margin-left: auto;
 margin-right: auto;
  }
+
+

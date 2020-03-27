@@ -1,12 +1,12 @@
 function pot_selector(){
-    console.log("This in progress");
+   /* console.log("This in progress");
     
     var div = document.createElement('div');
     div.textContent = " ";
     div.setAttribute('id', 'sidebar');
     document.body.appendChild(div);
 
-
+*/
 
     }
 

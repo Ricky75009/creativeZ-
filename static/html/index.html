@@ -4,20 +4,21 @@
   
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-  <script async type="text/javascript" src="/static/javascript/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script async type="text/javascript" src="../javascript/script.js"></script>
 
-
+ 
 </head>
 <body>
 
-<script>
-$( "#clickme" ).click(function() {
-  $( "#book" ).slideToggle( "slow", function() {
-    // Animation complete.
-  });
-});
-</script>
+  <!-- <script>
+$('#pot_selection').click(function () {
+  $('.sidebar_next').fadeIn()
+        $(this).toggle('slide', {
+            direction: 'left'
+        }, 1000);
+    });
+    </script> -->
 
 
 <div id="visualisator">
@@ -32,10 +33,19 @@ $( "#clickme" ).click(function() {
 </div>
   <div id="sidebar">
     <div id="container"; class='vertcenter'>
-    <div id='insidebar'><p><a href="javascript:pot_selector();">pot selection</a></p></div>
-    <div id='insidebar'><p><a href="javascript:design_selector();">design</a></p></div>
-    <div id='insidebar'><p><a href="javascript:main_color_selctor();">main color</a></p></div>
-    <div id='insidebar'><p><a href="javascript:secondary_color_selector();">secondary color</a></p></div>
+    <div id='insidebar';class='pot_selection'><p><a href="javascript:pot_selector();">pot selection</a></p></div>
+    <div id='insidebar'; class='design'><p><a href="javascript:design_selector();">design</a></p></div>
+    <div id='insidebar';class='main_color'><p><a href="javascript:main_color_selctor();">main color</a></p></div>
+    <div id='insidebar';class='secondary_color'><p><a href="javascript:secondary_color_selector();">secondary color</a></p></div>
+  </div>
+
+</div>
+  <div id="sidebar_next">
+    <div id="container"; class='vertcenter'>
+    <div id='insidebar';class='test'><p><a href="javascript:pot_selector();">color</a></p></div>
+    <div id='insidebar'><p><a href="javascript:design_selector();">color2</a></p></div>
+    <div id='insidebar'><p><a href="javascript:main_color_selctor();">color3</a></p></div>
+    <div id='insidebar'><p><a href="javascript:secondary_color_selector();">color4</a></p></div>
   </div>
 
   </div>
