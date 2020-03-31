@@ -65,9 +65,24 @@ function share(){
 }
 
 function facebook(){
-    alert('facebook')
-    FB.ui({
-        method: 'share',
-        href: 'https://developers.facebook.com/docs/',
-      }, function(response){});
+    window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalogo.kindler.design%2F&amp%3Bsrc=sdkpreparse','_blank','height=400,width=400')
 }
+
+function twitter(){
+    window.open('https://twitter.com/intent/tweet?text=Look%20at%20whaaaaaat%20I%20did%20on%20http://catalogo.kindler.design%20!','_blank','height=400,width=400')
+}
+
+function link(){
+    const copyToClipboard = str => {
+        const el = document.createElement('textarea');
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      };
+    
+
+}
+
+    
