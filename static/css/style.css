@@ -132,7 +132,7 @@ a {
 /* BUTTONS */
 
 #done {
-    margin-top: 69%;
+    margin-top: 77%;
     margin-right: 5px;
     margin-left: 20px;
     background-color: #ffffff;
@@ -153,26 +153,86 @@ a {
     top: 1px;
 }
 
-#share {
-    margin-top: 69%;
-    margin-right: 5px;
-    margin-left: 20px;
-    background-color: #ffffff;
-    border-radius: 27px;
-    display: inline-block;
+.share {
     cursor: pointer;
-    color: #000000;
-    font-family: Akkurat;
-    font-size: 17px;
-    padding: 16px 35px;
-    text-decoration: none;
+    border-radius: 50%;
+    background: white;
     box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
+    position: absolute;
+    margin-top: 77%;
+    margin-left:40px;  
+    width: 50px;
+    height: 50px;
     border: 1px solid transparent;
+    font-family: Akkurat;
+    font-size: 23px;
+    text-align: left;
+    display: inline-block;
 }
 
 #share:active {
     position: relative;
     top: 1px;
+}
+
+.link {
+    cursor: pointer;
+    border-radius: 50%;
+    background: black;
+    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
+    position: absolute;
+    margin-top: 77%;
+    margin-left:40px;  
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    font-family: Akkurat;
+    font-size: 23px;
+    text-align: left;
+    display: none;
+}
+.link.show{
+    display:inline-block;
+}
+
+.facebook {
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgb(101, 101, 241);
+    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
+    position: absolute;
+    margin-top: 77%;
+    margin-left:40px;  
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    font-family: Akkurat;
+    font-size: 23px;
+    text-align: left;
+    display: none;
+}
+.facebook.show{
+    display:inline-block;
+}
+
+.twitter {
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgb(103, 237, 247);
+    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
+    position: absolute;
+    margin-top: 77%;
+    margin-left:40px;  
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    font-family: Akkurat;
+    font-size: 23px;
+    text-align: left;
+    display: none;
+}
+.twitter.show{
+    display:inline-block;
 }
 
 #back_button{

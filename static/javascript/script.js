@@ -53,3 +53,21 @@ function render(){
 
 }
 
+function share(){
+    $('.facebook').toggleClass('show');
+    $('.facebook.show').css("position", "absolute").animate({bottom :  175});
+   
+    $('.twitter').toggleClass('show');
+    $('.twitter.show').css("position", "absolute").animate({bottom:  250});
+   
+    $('.link').toggleClass('show');
+    $('.link.show').css("position", "absolute").animate({bottom:  100});
+}
+
+function facebook(){
+    alert('facebook')
+    FB.ui({
+        method: 'share',
+        href: 'https://developers.facebook.com/docs/',
+      }, function(response){});
+}
