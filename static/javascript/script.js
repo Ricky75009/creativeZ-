@@ -54,35 +54,67 @@ function render(){
 }
 
 function share(){
+    
     $('.facebook').toggleClass('show');
-    $('.facebook.show').css("position", "absolute").animate({bottom :  175});
    
     $('.twitter').toggleClass('show');
-    $('.twitter.show').css("position", "absolute").animate({bottom:  250});
-   
     $('.link').toggleClass('show');
-    $('.link.show').css("position", "absolute").animate({bottom:  100});
+   
+    $('#arrow').toggleClass('show');
+    $('#arrow_2').toggleClass('show');
+    $('.small_lines').toggleClass('show');
+    $('#cross').toggleClass('show');
+    $('#cross_2').toggleClass('show');
+    $('#vertical_line').toggleClass('show');
+    $('#horizontal_line').toggleClass('show');
+
 }
 
+
+
+
 function facebook(){
-    window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalogo.kindler.design%2F&amp%3Bsrc=sdkpreparse','_blank','height=400,width=400')
+    // window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalogo.kindler.design%2F&amp%3Bsrc=sdkpreparse','_blank','height=400,width=400');
+
+
+    $('.link').toggleClass('show');
+    $('.twitter').toggleClass('show');
+    $('.facebook').toggleClass('show');
+
 }
 
 function twitter(){
-    window.open('https://twitter.com/intent/tweet?text=Look%20at%20whaaaaaat%20I%20did%20on%20http://catalogo.kindler.design%20!','_blank','height=400,width=400')
+    //window.open('https://twitter.com/intent/tweet?text=Look%20at%20whaaaaaat%20I%20did%20on%20http://catalogo.kindler.design%20!','_blank','height=400,width=400');
+    
+    $('.facebook').toggleClass('show');
+    
+   
+    $('.twitter').toggleClass('show');
+    
+    $('.link').toggleClass('show');
+
+
 }
 
 function link(){
-    const copyToClipboard = str => {
-        const el = document.createElement('textarea');
-        el.value = str;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-      };
+let test = document.createElement('input');
+
+test.setAttribute('Value',document.getElementById('test').innerHTML);
+document.body.appendChild(test);
+test.select();
+document.execCommand('copy');
+document.body.removeChild(test);
+
+
+
+$('.facebook').toggleClass('show');
     
+   
+$('.twitter').toggleClass('show');
+
+$('.link').toggleClass('show');
+
+
 
 }
 
-    

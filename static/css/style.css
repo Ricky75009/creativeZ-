@@ -179,9 +179,9 @@ a {
     cursor: pointer;
     border-radius: 50%;
     background: black;
-    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
-    position: absolute;
-    margin-top: 77%;
+    transition: all .8s ease-in-out;
+    position: fixed;
+    bottom: 30px;
     margin-left:40px;  
     width: 50px;
     height: 50px;
@@ -189,17 +189,20 @@ a {
     font-family: Akkurat;
     font-size: 23px;
     text-align: left;
-    display: none;
+
 }
 .link.show{
-    display:inline-block;
+    
+    bottom: 110px;
+    background: black;
+    transition: all .5s ease-out;
+    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
 }
 
 .facebook {
     cursor: pointer;
     border-radius: 50%;
-    background: rgb(101, 101, 241);
-    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
+    background:transparent;
     position: absolute;
     margin-top: 77%;
     margin-left:40px;  
@@ -209,17 +212,21 @@ a {
     font-family: Akkurat;
     font-size: 23px;
     text-align: left;
-    display: none;
+    display: inline-block;
+    transition: all .8s ease-in-out;
 }
 .facebook.show{
     display:inline-block;
+    transform: translateY(-240px);
+    transition: all .5s ease-out;
+    background: rgb(101, 101, 241);
+    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
 }
 
 .twitter {
     cursor: pointer;
     border-radius: 50%;
-    background: rgb(103, 237, 247);
-    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
+    background:transparent;
     position: absolute;
     margin-top: 77%;
     margin-left:40px;  
@@ -229,10 +236,15 @@ a {
     font-family: Akkurat;
     font-size: 23px;
     text-align: left;
-    display: none;
+    display: inline-block;
+    transition: all .8s ease-in-out;
 }
 .twitter.show{
     display:inline-block;
+    transform: translateY(-160px);
+    transition: all .5s ease-out;
+    background: rgb(103, 237, 247);
+    box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
 }
 
 #back_button{
@@ -273,4 +285,113 @@ p {
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.lines{
+    cursor: pointer;
+    background-color: black;
+    width: 2px;
+    height:20px;
+    position:fixed;
+    transition: all .2s ease-in-out;
+}
+
+.small_lines{
+    cursor: pointer;
+    background-color: black;
+    width: 2px;
+    height: 5px;
+    position: fixed;
+    transition: all .6s ease-in-out;
+}
+.small_lines.show{
+background-color: transparent;
+transition: all .2s ease-in-out;
+}
+
+.arrow{
+    cursor: pointer;
+    background-color: black;
+    width: 2px;
+    height: 8px;
+    position: fixed; 
+    transition: all .2s ease-in-out;
+}
+
+
+#cross{
+left:54px;
+bottom: 42px;
+transition: all .4s ease-in-out;
+}
+#cross.show{
+    transform: translateX(10px)translateY(-2px) rotate(45deg);
+    transition: all .5s ease-in-out;
+}
+
+
+
+#cross_2{
+left: 73px;
+bottom: 42px;
+transition: all .4s ease-in-out;
+}
+#cross_2.show{
+    transition: all .5s ease-in-out;
+    transform: translateX(-9px) translateY(-2px) rotate(-45deg) ;
+}
+
+#horizontal_line{
+left:64px;
+bottom: 33px;
+transform: rotate(90deg);
+transition: all .3s ease-in-out;
+}
+#horizontal_line.show{
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+}
+
+#vertical_line{
+bottom:49px;
+left:64px;
+transition: all .3s ease-in-out;
+}
+#vertical_line.show{
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+    transform: translateY(-15px);
+}
+
+#arrow{
+bottom: 64px;
+left:62px;
+transform: rotate(45deg);
+}
+#arrow.show{
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+    transform: translateY(-20px) rotate(45deg);
+    }
+
+#arrow_2{
+    bottom: 64px;
+    left:66px;
+    transform: rotate(-45deg);
+}
+#arrow_2.show{
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+    transform: translateY(-20px) rotate(-45deg);
+    }
+
+#small_line{
+bottom: 59px;
+left:57px;
+transform: rotate(90deg);
+}
+#small_line_2{
+    bottom: 59px;
+    left:70px;
+    transform: rotate(90deg);
 }

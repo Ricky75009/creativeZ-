@@ -7,21 +7,36 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script async type="text/javascript" src="javascript/script.js"></script>
 
+
 </head>
 <textarea id='linktext'>http://catalogo.kindler.design</textarea>
 <body>
-
+<textarea style="font-size: 0,00000001 px"; id='test'>http://catalogo.kindler.design </textarea>
 
 
     <div id="visualisator">
 
         <p id="logo">Z+</p>
+
         <div>
-        <button type="submit" ; class='share'; onclick='share()'; value='share'></button>
+
         <button type="submit" ; class='facebook'; onclick='facebook()';value='share'></button>
         <button type="submit" ; class='twitter'; onclick="twitter()"; value='share'></button>
-        <button type="submit" ; class='link'; onclick='link()'; value='share'></button>
+        <button type="submit" ; class='link'; id='btn'; onclick='link()'; value='share'; ></button>
+       
+        <div onclick='share()'>
+            <button type="submit" ; class='share';onclick='share()'; value='share'></button>
+            <div class='lines'; id='cross'></div>
+            <div class='lines'; id='cross_2'></div>
+            <div class='lines'; id='horizontal_line'></div>
+            <div class='lines'; id='vertical_line'></div>
+            <div class='arrow'; id='arrow'></div>
+            <div class='arrow'; id='arrow_2'></div>
+            <div class='small_lines'; id='small_line'></div>
+            <div class='small_lines'; id='small_line_2'></div>
         </div>
+        </div>
+
         <div id="container">
 
 
