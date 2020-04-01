@@ -15,17 +15,46 @@
 
 
     <div id="visualisator">
-
+        
         <p id="logo">Z+</p>
+ 
 
-        <div>
 
-        <button type="submit" ; class='facebook'; onclick='facebook()';value='share'></button>
-        <button type="submit" ; class='twitter'; onclick="twitter()"; value='share'></button>
-        <button type="submit" ; class='link'; id='btn'; onclick='link()'; value='share'; ></button>
-       
+        <div onclick="link()">
+            <div class="placing">
+                <div class='hover_text_link'>copy the link</div>
+                <div class='rose' > </div>
+            </div>
+          <div id='hoverlink'> 
+            <button type="submit" ; class='link'; value='share'; ></button>
+            <img src='assets/lien.png'; alt='link picture'; class='plink'>
+            </div>
+        
+        </div>
+        
+
+        <div onclick="twitter()">
+            <div class="placing">
+                <div class='hover_text_twitter'>tweet</div>
+                <div class='rose' id='twitter_height'> </div>
+            </div>
+            <div id='hovertwitter'> 
+            <button type="submit" ; class='twitter'; value='share'></button>
+            <img src='assets/twitter.png'; alt='twitter picture'; class='ptwitter'>
+        </div>
+    </div>
+        <div onclick="facebook()">
+            <div class="placing">
+                <div class='hover_text_fb'>share on facebook</div>
+                <div class='rose' id='fb_height'> </div>
+            </div>
+            <div id='hoverfb'>
+        <button type="submit" ; class='facebook';value='share'></button>
+        <img src='assets/fb.png'; alt='link picture'; class='pfb'>
+        </div>
+    </div>
         <div onclick='share()'>
-            <button type="submit" ; class='share';onclick='share()'; value='share'></button>
+            <button type="submit" ; class='share'; value='share'></button>
             <div class='lines'; id='cross'></div>
             <div class='lines'; id='cross_2'></div>
             <div class='lines'; id='horizontal_line'></div>
@@ -35,7 +64,7 @@
             <div class='small_lines'; id='small_line'></div>
             <div class='small_lines'; id='small_line_2'></div>
         </div>
-        </div>
+        
 
         <div id="container">
 
@@ -44,6 +73,8 @@
         </div>
     </div>
 
+
+        
     <div id="sidebar">
         <div id="container" ; class='vertcenter'>
             <div id='insidebar' ;class='pot_selection'>

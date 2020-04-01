@@ -20,9 +20,10 @@ a {
     font-weight: 500;
     font-size: 100px;
     line-height: 0px;
+    left: 30px;
+    top: -30px;
     position: fixed;
-    left: 3%;
-    bottom: 79%;
+    display: inline-block;
 }
 
 #visualisator {
@@ -132,7 +133,8 @@ a {
 /* BUTTONS */
 
 #done {
-    margin-top: 77%;
+    position: fixed;
+    bottom: 30px;
     margin-right: 5px;
     margin-left: 20px;
     background-color: #ffffff;
@@ -158,8 +160,8 @@ a {
     border-radius: 50%;
     background: white;
     box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
-    position: absolute;
-    margin-top: 77%;
+    position: fixed;
+    bottom: 30px;
     margin-left:40px;  
     width: 50px;
     height: 50px;
@@ -178,7 +180,7 @@ a {
 .link {
     cursor: pointer;
     border-radius: 50%;
-    background: black;
+    background: transparent;
     transition: all .8s ease-in-out;
     position: fixed;
     bottom: 30px;
@@ -188,9 +190,11 @@ a {
     border: 1px solid transparent;
     font-family: Akkurat;
     font-size: 23px;
-    text-align: left;
+    text-align: center;
 
 }
+
+
 .link.show{
     
     bottom: 110px;
@@ -203,8 +207,8 @@ a {
     cursor: pointer;
     border-radius: 50%;
     background:transparent;
-    position: absolute;
-    margin-top: 77%;
+    position: fixed;
+    bottom: 30px;
     margin-left:40px;  
     width: 50px;
     height: 50px;
@@ -227,8 +231,8 @@ a {
     cursor: pointer;
     border-radius: 50%;
     background:transparent;
-    position: absolute;
-    margin-top: 77%;
+    position: fixed;
+    bottom: 30px;
     margin-left:40px;  
     width: 50px;
     height: 50px;
@@ -247,12 +251,13 @@ a {
     box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
 }
 
+
 #back_button{
     cursor: pointer;
     border-radius: 50%;
     background: transparent;
     /* box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff; */
-    position: absolute;
+    position: fixed;
     margin-top: 20px;
     margin-left: 20px;  
     width: 40px;
@@ -286,6 +291,9 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+/* ELEMENTS SHARE PICTOGRAM */
 
 .lines{
     cursor: pointer;
@@ -394,4 +402,125 @@ transform: rotate(90deg);
     bottom: 59px;
     left:70px;
     transform: rotate(90deg);
+}
+
+/* END ELEMENTS SHARE PICTOGRAM */
+.text{
+    position: fixed;
+}
+.rose{
+    
+    background-color: #FFF7F7; 
+    height: 30px;
+    width: 175px;
+    position: fixed;
+    display: inline-block;
+}
+
+.placing{
+    bottom: 150px;
+    position: absolute;
+    left: -85px
+    
+}
+.hover_text_link{
+    position: fixed;
+
+    color: #000000;
+    font-family: Akkurat;
+    font-size: 17px;
+    display: block;
+    bottom: 125px;
+    transition: all .2s ease-in-out;
+}
+.hover_text_link.show{
+    transform: translateX(180px);
+    transition: all .15s ease-in-out;
+}
+.hover_text_link.show.plus{
+    transform: translateX(-180px);
+    transition: all .15s ease-in-out;
+}
+
+.hover_text_fb{
+    position: fixed;
+
+    color: #000000;
+    font-family: Akkurat;
+    font-size: 17px;
+    display: block;
+    bottom: 285px;
+    left:-100px;
+    transition: all .2s ease-in-out;
+}
+.hover_text_fb.show{
+    transform: translateX(200px);
+    transition: all .15s ease-in-out;
+}
+.hover_text_twitter{
+    position: fixed;
+    
+    color: #000000;
+    font-family: Akkurat;
+    font-size: 17px;
+    display: block;
+    bottom: 205px;
+    transition: all .2s ease-in-out;
+}
+.hover_text_twitter.show{
+    transform: translateX(180px);
+    transition: all .15s ease-in-out;
+}
+#twitter_height{
+    
+bottom: 205px;
+}
+#fb_height{
+bottom: 285px;
+}
+
+.plink{
+    cursor: pointer;
+    width: 2%;
+    background: transparent;
+    transition: all .8s ease-in-out;
+    position: fixed;
+    bottom: 42px;
+    margin-left: 51px;  
+    text-align: center;
+}
+.plink.show{
+    bottom: 122px;
+    transition: all .5s ease-out;
+}
+
+.ptwitter{
+    cursor: pointer;
+
+
+    width: 2%;
+    background: transparent;
+    transition: all .8s ease-in-out;
+    position: fixed;
+    bottom: 52px;
+    margin-left: 51px;  
+    text-align: center;
+}
+.ptwitter.show{
+    bottom: 203px;
+    transition: all .5s ease-out;
+}
+.pfb{
+    cursor: pointer;
+
+    width: 1%;
+    transition: all .8s ease-in-out;
+    position: fixed;
+    bottom: 47px;
+    margin-left: 57px;  
+    text-align: center;
+}
+.pfb.show{
+    bottom: 280px;
+    transition: all .555s ease-out;
 }
