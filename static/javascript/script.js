@@ -94,7 +94,7 @@ function share(){
 
 
 function facebook(){
-     window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalogo.kindler.design%2F&amp%3Bsrc=sdkpreparse','_blank','height=400,width=400');
+     window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalogo.kindler.design%2F&amp%3Bsrc=sdkpreparse','_blank','height=500,width=500');
 
 
     $('.link').toggleClass('show');
@@ -108,10 +108,14 @@ function facebook(){
     $('#cross_2').toggleClass('show');
     $('#vertical_line').toggleClass('show');
     $('#horizontal_line').toggleClass('show');
+
+    $('.plink').toggleClass('show');
+    $('.ptwitter').toggleClass('show');
+    $('.pfb').toggleClass('show');
 }
 
 function twitter(){
-    window.open('https://twitter.com/intent/tweet?text=Look%20at%20whaaaaaat%20I%20did%20on%20http://catalogo.kindler.design%20!','_blank','height=400,width=400');
+    window.open('https://twitter.com/intent/tweet?text=Look%20at%20whaaaaaat%20I%20did%20on%20http://catalogo.kindler.design%20!','_blank','height=500,width=500');
     
     $('.facebook').toggleClass('show');
     $('.twitter').toggleClass('show');
@@ -124,6 +128,10 @@ function twitter(){
     $('#cross_2').toggleClass('show');
     $('#vertical_line').toggleClass('show');
     $('#horizontal_line').toggleClass('show');
+
+    $('.plink').toggleClass('show');
+    $('.ptwitter').toggleClass('show');
+    $('.pfb').toggleClass('show');
 }
 
 function link(){
@@ -146,6 +154,10 @@ $('#cross_2').toggleClass('show');
 $('#vertical_line').toggleClass('show');
 $('#horizontal_line').toggleClass('show');
 $('.hover_text_link.show').removeClass('plus');
+
+$('.plink').toggleClass('show');
+$('.ptwitter').toggleClass('show');
+$('.pfb').toggleClass('show');
 }
 
 

@@ -1,180 +1,239 @@
 <html>
-
-<head>
+  <head>
     <title>Catalogue Z+</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script async type="text/javascript" src="javascript/script.js"></script>
-
-
-</head>
-<textarea id='linktext'>http://catalogo.kindler.design</textarea>
-<body>
-<textarea style="font-size: 0,00000001 px"; id='test'>http://catalogo.kindler.design </textarea>
-
+  </head>
+  <textarea id="linktext">http://catalogo.kindler.design</textarea>
+  <body>
+    <textarea style="font-size: 0,00000001 px" ; id="test">
+http://catalogo.kindler.design </textarea
+    >
 
     <div id="visualisator">
-        
-        <p id="logo">Z+</p>
- 
+      <p id="logo">Z+</p>
 
-
-        <div onclick="link()">
-            <div class="placing">
-                <div class='hover_text_link'>copy the link</div>
-                <div class='rose' > </div>
-            </div>
-          <div id='hoverlink'> 
-            <button type="submit" ; class='link'; value='share'; ></button>
-            <img src='assets/lien.png'; alt='link picture'; class='plink'>
-            </div>
-        
+      <!-- SHARE FUNCTION -->
+      <div onclick="link()">
+        <div class="placing">
+          <div class="hover_text_link">copy the link</div>
+          <div class="rose"></div>
         </div>
-        
-
-        <div onclick="twitter()">
-            <div class="placing">
-                <div class='hover_text_twitter'>tweet</div>
-                <div class='rose' id='twitter_height'> </div>
-            </div>
-            <div id='hovertwitter'> 
-            <button type="submit" ; class='twitter'; value='share'></button>
-            <img src='assets/twitter.png'; alt='twitter picture'; class='ptwitter'>
+        <div id="hoverlink">
+          <button type="submit" ; class="link" ; value="share" ;></button>
+          <img src="assets/lien.png" ; alt="link picture" ; class="plink" />
         </div>
+      </div>
+
+      <div onclick="twitter()">
+        <div class="placing">
+          <div class="hover_text_twitter">tweet</div>
+          <div class="rose" id="twitter_height"></div>
+        </div>
+        <div id="hovertwitter">
+          <button type="submit" ; class="twitter" ; value="share"></button>
+          <img
+            src="assets/twitter.png"
+            ;
+            alt="twitter picture"
+            ;
+            class="ptwitter"
+          />
+        </div>
+      </div>
+      <div onclick="facebook()">
+        <div class="placing">
+          <div class="hover_text_fb">share on facebook</div>
+          <div class="rose" id="fb_height"></div>
+        </div>
+        <div id="hoverfb">
+          <button type="submit" ; class="facebook" ;value="share"></button>
+          <img src="assets/fb.png" ; alt="link picture" ; class="pfb" />
+        </div>
+      </div>
+      <div onclick="share()">
+        <button type="submit" ; class="share" ; value="share"></button>
+        <div class="lines" ; id="cross"></div>
+        <div class="lines" ; id="cross_2"></div>
+        <div class="lines" ; id="horizontal_line"></div>
+        <div class="lines" ; id="vertical_line"></div>
+        <div class="arrow" ; id="arrow"></div>
+        <div class="arrow" ; id="arrow_2"></div>
+        <div class="small_lines" ; id="small_line"></div>
+        <div class="small_lines" ; id="small_line_2"></div>
+      </div>
+
+      <!-- DONE BUTTON -->
+
+      <div id="container">
+        <button type="submit" ; id="done" ; value="done">done</button>
+      </div>
     </div>
-        <div onclick="facebook()">
-            <div class="placing">
-                <div class='hover_text_fb'>share on facebook</div>
-                <div class='rose' id='fb_height'> </div>
-            </div>
-            <div id='hoverfb'>
-        <button type="submit" ; class='facebook';value='share'></button>
-        <img src='assets/fb.png'; alt='link picture'; class='pfb'>
-        </div>
-    </div>
-        <div onclick='share()'>
-            <button type="submit" ; class='share'; value='share'></button>
-            <div class='lines'; id='cross'></div>
-            <div class='lines'; id='cross_2'></div>
-            <div class='lines'; id='horizontal_line'></div>
-            <div class='lines'; id='vertical_line'></div>
-            <div class='arrow'; id='arrow'></div>
-            <div class='arrow'; id='arrow_2'></div>
-            <div class='small_lines'; id='small_line'></div>
-            <div class='small_lines'; id='small_line_2'></div>
-        </div>
-        
-
-        <div id="container">
 
 
-            <button type="submit" ; id='done' ; value='done'>done</button>
-        </div>
-    </div>
 
-
-        
+    <!-- SIDEBAR TO PERSONNALIZE -->
     <div id="sidebar">
-        <div id="container" ; class='vertcenter'>
-            <div id='insidebar' ;class='pot_selection'>
-                <p><a href="javascript:pot_selector();">pot selection</a></p>
-            </div>
-            <div id='insidebar' ; class='design'>
-                <p><a href="javascript:design_selector();">design</a></p>
-            </div>
-            <div id='insidebar' ;class='main_color'>
-                <p><a href="javascript:main_color_selector();">main color</a></p>
-            </div>
-            <div id='insidebar' ;class='secondary_color'>
-                <p><a href="javascript:secondary_color_selector();">secondary color</a></p>
-            </div>
+      <div id="container" ; class="vertcenter">
+        <div id="insidebar" ;class="pot_selection">
+          <p><a href="javascript:pot_selector();">pot selection</a></p>
         </div>
+        <div id="insidebar" ; class="design">
+          <p><a href="javascript:design_selector();">design</a></p>
+        </div>
+        <div id="insidebar" ;class="main_color">
+          <p><a href="javascript:main_color_selector();">main color</a></p>
+        </div>
+        <div id="insidebar" ;class="secondary_color">
+          <p>
+            <a href="javascript:secondary_color_selector();">secondary color</a>
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class='pot-selector'>
-        <button type="submit" ; id='back_button' ; onclick="back('pot-selector')"; value='back_pot'>&gt;</button>
-        <div id="container" ; class='vertcenter'>
-            <div id='insidebar'>
-                <p><a href="javascript:change_pot('pot');">pot</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_pot('pot2');">pot2</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_pot('pot3');">pot3</a></p>
-            </div>
-            <div id='insidebar' ; class="close">
-                <p><a href="javascript:change_pot('pot4');">pot4</a></p>
-            </div>
+    <div class="pot-selector">
+      <button
+        type="submit"
+        ;
+        id="back_button"
+        ;
+        onclick="back('pot-selector')"
+        ;
+        value="back_pot"
+      >
+        &gt;
+      </button>
+      <div id="container" ; class="vertcenter">
+        <div id="insidebar">
+          <p><a href="javascript:change_pot('pot');">pot</a></p>
         </div>
-
-    </div>
-    <div class='design-selector'>
-        <button type="submit" ; id='back_button' ; onclick="back('design-selector')"; value='back_design'>&gt;</button>
-        <div id="container" ; class='vertcenter'>
-            <div id='insidebar' ;class='test'>
-                <p><a href="javascript:change_design('design1');">design1</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_design('design2');">design2</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_design('design3');">design3</a></p>
-            </div>
-            <div id='insidebar' ; class="close">
-                <p><a href="javascript:change_design('design4');">design4</a></p>
-            </div>
+        <div id="insidebar">
+          <p><a href="javascript:change_pot('pot2');">pot2</a></p>
         </div>
-
-    </div>
-
-    <div class='main_color-selector'>
-        <button type="submit" ; id='back_button' ; onclick="back('main_color-selector')"; value='back_main_color'>&gt;</button>
-        <div id="container" ; class='vertcenter'>
-            <div id='insidebar' ;class='test'>
-                <p><a href="javascript:change_main_color('main_color1');">color1</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_main_color('main_color2');">color2</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_main_color('main_color3');">color3</a></p>
-            </div>
-            <div id='insidebar' ; class="close">
-                <p><a href="javascript:change_main_color('main_color4');">color4</a></p>
-            </div>
+        <div id="insidebar">
+          <p><a href="javascript:change_pot('pot3');">pot3</a></p>
         </div>
-
-    </div>
-
-    <div class='secondary_color-selector'>
-        <button type="submit" ; id='back_button' ; onclick="back('secondary_color-selector')"; value='back_secondary_color'>&gt;</button>
-        <div id="container" ; class='vertcenter'>
-            <div id='insidebar' ;class='test'>
-                <p><a href="javascript:change_secondary_color('color1');">color1</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_secondary_color('color2');">color2</a></p>
-            </div>
-            <div id='insidebar'>
-                <p><a href="javascript:change_secondary_color('color3');">color3</a></p>
-            </div>
-            <div id='insidebar' ; class="close">
-                <p><a href="javascript:change_secondary_color('color4');">color4</a></p>
-            </div>
-            <div id='insidebar' ; class="close">
-                <p><a href="javascript:change_secondary_color('color5');">color5</a></p>
-            </div>
-            <div id='insidebar' ; class="close">
-                <p><a href="javascript:change_secondary_color('color6');">color6</a></p>
-            </div>
-            <div id='insidebar' ; class="close">
-                <p><a href="javascript:change_secondary_color('color7');">color7</a></p>
-            </div>
+        <div id="insidebar" ; class="close">
+          <p><a href="javascript:change_pot('pot4');">pot4</a></p>
         </div>
-
+      </div>
     </div>
-</body>
+    <div class="design-selector">
+      <button
+        type="submit"
+        ;
+        id="back_button"
+        ;
+        onclick="back('design-selector')"
+        ;
+        value="back_design"
+      >
+        &gt;
+      </button>
+      <div id="container" ; class="vertcenter">
+        <div id="insidebar" ;class="test">
+          <p><a href="javascript:change_design('design1');">design1</a></p>
+        </div>
+        <div id="insidebar">
+          <p><a href="javascript:change_design('design2');">design2</a></p>
+        </div>
+        <div id="insidebar">
+          <p><a href="javascript:change_design('design3');">design3</a></p>
+        </div>
+        <div id="insidebar" ; class="close">
+          <p><a href="javascript:change_design('design4');">design4</a></p>
+        </div>
+      </div>
+    </div>
 
+    <div class="main_color-selector">
+      <button
+        type="submit"
+        ;
+        id="back_button"
+        ;
+        onclick="back('main_color-selector')"
+        ;
+        value="back_main_color"
+      >
+        &gt;
+      </button>
+      <div id="container" ; class="vertcenter">
+        <div id="insidebar" ;class="test">
+          <p>
+            <a href="javascript:change_main_color('main_color1');">color1</a>
+          </p>
+        </div>
+        <div id="insidebar">
+          <p>
+            <a href="javascript:change_main_color('main_color2');">color2</a>
+          </p>
+        </div>
+        <div id="insidebar">
+          <p>
+            <a href="javascript:change_main_color('main_color3');">color3</a>
+          </p>
+        </div>
+        <div id="insidebar" ; class="close">
+          <p>
+            <a href="javascript:change_main_color('main_color4');">color4</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="secondary_color-selector">
+      <button
+        type="submit"
+        ;
+        id="back_button"
+        ;
+        onclick="back('secondary_color-selector')"
+        ;
+        value="back_secondary_color"
+      >
+        &gt;
+      </button>
+      <div id="container" ; class="vertcenter">
+        <div id="insidebar" ;class="test">
+          <p>
+            <a href="javascript:change_secondary_color('color1');">color1</a>
+          </p>
+        </div>
+        <div id="insidebar">
+          <p>
+            <a href="javascript:change_secondary_color('color2');">color2</a>
+          </p>
+        </div>
+        <div id="insidebar">
+          <p>
+            <a href="javascript:change_secondary_color('color3');">color3</a>
+          </p>
+        </div>
+        <div id="insidebar" ; class="close">
+          <p>
+            <a href="javascript:change_secondary_color('color4');">color4</a>
+          </p>
+        </div>
+        <div id="insidebar" ; class="close">
+          <p>
+            <a href="javascript:change_secondary_color('color5');">color5</a>
+          </p>
+        </div>
+        <div id="insidebar" ; class="close">
+          <p>
+            <a href="javascript:change_secondary_color('color6');">color6</a>
+          </p>
+        </div>
+        <div id="insidebar" ; class="close">
+          <p>
+            <a href="javascript:change_secondary_color('color7');">color7</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

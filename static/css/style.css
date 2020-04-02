@@ -151,8 +151,8 @@ a {
 }
 
 #done:active {
-    position: relative;
-    top: 1px;
+    position: fixed;
+    transform: translateY(-1px);
 }
 
 .share {
