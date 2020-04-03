@@ -51,7 +51,7 @@ a {
 .pot-selector {
     width: 490px;
     right: -600px;
-    height: 100vh;
+    height: 300vh;
     position: fixed;
     z-index: 10;
     top: 0px;
@@ -279,17 +279,20 @@ p {
     color: #000000;
     font-family: Akkurat;
     font-size: 17px;
+    cursor: pointer;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 .vertcenter {
     margin-top: 200px;
 }
 
-#insidebar {
-    margin-top: 150px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
+#misss {
+background-color: transparent;
 }
 
 

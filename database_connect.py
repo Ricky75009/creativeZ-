@@ -5,25 +5,28 @@
 import sqlite3
 
 def get_pots():
-    # connect to the database file, and create a connection object
     db_connection = sqlite3.connect('creaZ.db')
-
-    # create a database cursor object, which allows us to perform SQL on the database. 
-    db_cursor = db_connection.cursor()
-
-    # run a first query 
+    db_cursor = db_connection.cursor() 
     db_cursor.execute("SELECT name FROM pot")
-
-
-
-    # store the result in a local variable. 
-    # this will be a list of tuples, where each tuple represents a row in the table
     list_pots = db_cursor.fetchall()
     pots=[]
     for i in range (len(list_pots)):
         temp = list_pots[i][0]
         pots.append(temp) 
     return(pots)
+
+
+
+def get_design(design):
+    db_connection = sqlite3.connect('creaZ.db')
+    db_cursor = db_connection.cursor() 
+    db_cursor.execute(f'''SELECT design.design from design LEFT JOIN pot ON pot.ID = design.pot WHERE pot.name = "{design}"''')
+    list_design = db_cursor.fetchall()
+    designs=[]
+    for i in range (len(list_design)):
+        temp = list_design[i][0]
+        designs.append(temp) 
+    return(designs)
 
 
 # db_connection = sqlite3.connect('creaZ.db')

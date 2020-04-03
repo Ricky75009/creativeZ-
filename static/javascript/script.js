@@ -2,6 +2,7 @@ let pot='';
 let design='';
 let main_color='';
 let secondary_color='';
+let countpot=0;
 
 $('#hoverlink').hover(function(){
     $('.hover_text_link').toggleClass('show');
@@ -22,8 +23,24 @@ $('#hoverfb').hover(function(){
   });
 
 function pot_selector() {
-    $('.pot-selector').toggleClass('show');
 
+    $('.pot-selector').toggleClass('show');
+    if (countpot==0){
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open("GET", "http://127.0.0.1:5000/api/pots")
+        xhr.onload = function () {
+           let lits_pots = xhr.response;
+           for (let i = 0; i < lits_pots.length; i++){
+                let paragraph = document.createElement('p');
+                paragraph.textContent = lits_pots[i];
+              paragraph.setAttribute("onclick", "change_pot('"+lits_pots[i]+"')");
+              document.getElementById('misss').appendChild(paragraph);
+            }
+        }
+         xhr.send();
+    }
+    countpot++;
 }
 
 function design_selector() {
@@ -161,33 +178,18 @@ $('.pfb').toggleClass('show');
 }
 
 function get_all_pots(){
-    
-    // create a new request object
     let xhr = new XMLHttpRequest();
-    // set the expected response type as JSON (the data format)
     xhr.responseType = 'json';
-    // define the request by "opening" it
     xhr.open("GET", "http://127.0.0.1:5000/api/pots")
-
-    // define what to do when the response comes back
     xhr.onload = function () {
-        //create a new local variable which gets the content of the backend's response
         let lits_pots = xhr.response;
-        console.log(lits_pots)
-        //now that we have an array, we can manipulate the DOM with our new, dynamic data from the backend!
-        //loop over the data from the backend. For each element in the array, create a new paragraph. 
-        //the content of that paragraph is the string sent from the backend,
         for (let i = 0; i < lits_pots.length; i++){
             let paragraph = document.createElement('p');
             paragraph.textContent = lits_pots[i];
-            document.body.appendChild(paragraph);
+            paragraph.setAttribute("onclick", "love()");
+            document.getElementById('misss').appendChild(paragraph);
         }
-
     }
-
-
-
-    //send the request, and when it comes back, run the code above.
     xhr.send();
-
+    $('.pot-selector').toggleClass('show');
 }
