@@ -4,6 +4,7 @@
 # import the python library for SQLite 
 import sqlite3
 
+
 def get_pots():
     db_connection = sqlite3.connect('creaZ.db')
     db_cursor = db_connection.cursor() 
@@ -14,6 +15,7 @@ def get_pots():
         temp = list_pots[i][0]
         pots.append(temp) 
     return(pots)
+
 
 
 

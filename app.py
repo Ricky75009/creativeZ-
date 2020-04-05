@@ -1,7 +1,7 @@
-from flask import Flask, jsonify, send_file
+from flask import Flask, jsonify, send_file, request
 from flask_cors import CORS
 from database_connect import get_pots
-
+import sys
 
 
 
@@ -15,6 +15,20 @@ def index():
 def api_pots():
     return jsonify(get_pots())
 
+
+
+@app.route("/function_route", methods=["GET", "POST"])
+def my_function():
+    if request.method == "POST":
+        data = ""
+
+       
+
+        print(data, file=sys.stderr)
+
+
+        return print(jsonify(data))
+
 # @app.route('/api/design',  methods=['GET'])
 # def api_design():
 #     return jsonify(get_design())
@@ -27,10 +41,7 @@ def api_pots():
 # def api_second_color():
 #     return jsonify(get_secondary_color())
 
-@app.route('/postmethod', methods = ['POST'])
-def get_post_javascript_data():
-    jsdata = request.form['pot']
-    return print(jsdata)
+
 
 
 

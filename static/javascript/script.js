@@ -28,7 +28,7 @@ function pot_selector() {
     if (countpot==0){
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open("GET", "http://127.0.0.1:5000/api/pots")
+        xhr.open("GET", "http://127.0.0.1:5000/api/pots");
         xhr.onload = function () {
            let lits_pots = xhr.response;
            for (let i = 0; i < lits_pots.length; i++){
@@ -59,6 +59,8 @@ function change_pot(pot_temp) {
     $('.pot-selector').toggleClass('show');
     console.log(`pot changed to ${pot_temp}`);
     pot=pot_temp;
+    pot_json =  JSON.stringify(pot);
+
 }
 
 function change_desing(design_temp){
@@ -193,3 +195,4 @@ function get_all_pots(){
     xhr.send();
     $('.pot-selector').toggleClass('show');
 }
+

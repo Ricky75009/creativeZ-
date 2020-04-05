@@ -28,9 +28,9 @@ a {
 
 #visualisator {
     position: fixed;
-    /* height: 5000px; */
+
     left: 0%;
-    right: 34%;
+    right: 490px;
     top: 0%;
     bottom: 0%;
     background-color: #FFF7F7;
@@ -38,8 +38,8 @@ a {
 
 #sidebar {
     position: fixed;
-    left: 66%;
-    right: 0%;
+    width: 490px;
+    right: 0px;
     top: 0%;
     bottom: 0%;
     background-color: #ffffff;
@@ -51,7 +51,6 @@ a {
 .pot-selector {
     width: 490px;
     right: -600px;
-    height: 300vh;
     position: fixed;
     z-index: 10;
     top: 0px;
@@ -71,7 +70,7 @@ a {
 .design-selector {
     width: 490px;
     right: -600px;
-    height: 100vh;
+
     position: fixed;
     z-index: 10;
     top: 0px;
@@ -335,6 +334,7 @@ left:54px;
 bottom: 42px;
 transition: all .4s ease-in-out;
 }
+
 #cross.show{
     transform: translateX(10px)translateY(-2px) rotate(45deg);
     transition: all .5s ease-in-out;
@@ -347,6 +347,7 @@ left: 73px;
 bottom: 42px;
 transition: all .4s ease-in-out;
 }
+
 #cross_2.show{
     transition: all .5s ease-in-out;
     transform: translateX(-9px) translateY(-2px) rotate(-45deg) ;
@@ -484,7 +485,7 @@ bottom: 285px;
 
 .plink{
     cursor: pointer;
-    width: 2%;
+    width: 30px;
     background: transparent;
     transition: all .8s ease-in-out;
     position: fixed;
@@ -501,7 +502,7 @@ bottom: 285px;
     cursor: pointer;
 
 
-    width: 2%;
+    width: 30px;
     background: transparent;
     transition: all .8s ease-in-out;
     position: fixed;
@@ -515,8 +516,7 @@ bottom: 285px;
 }
 .pfb{
     cursor: pointer;
-
-    width: 1%;
+    height: 30px;
     transition: all .8s ease-in-out;
     position: fixed;
     bottom: 47px;
