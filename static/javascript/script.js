@@ -1,4 +1,4 @@
-let pot='';
+let pot='huevo';
 let design='';
 let main_color='';
 let secondary_color='';
@@ -59,7 +59,12 @@ function change_pot(pot_temp) {
     $('.pot-selector').toggleClass('show');
     console.log(`pot changed to ${pot_temp}`);
     pot=pot_temp;
-    pot_json =  JSON.stringify(pot);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", 'http://127.0.0.1:5000/api/change_pot');
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify({ 'pot': pot }));
+    alert('it worked pot');
 
 }
 

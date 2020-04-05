@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, send_file, request
 from flask_cors import CORS
-from database_connect import get_pots
+from database_connect import get_pots, change_pot
 import sys
 
 
@@ -28,6 +28,14 @@ def my_function():
 
 
         return print(jsonify(data))
+
+@app.route('/api/change_pot', methods=['POST'])
+def api_change_pot():
+    print(request.json)
+    print('THIS IS A TEST')
+    return change_pot(request.json)
+
+
 
 # @app.route('/api/design',  methods=['GET'])
 # def api_design():

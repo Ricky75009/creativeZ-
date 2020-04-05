@@ -5,6 +5,7 @@
 import sqlite3
 
 
+
 def get_pots():
     db_connection = sqlite3.connect('creaZ.db')
     db_cursor = db_connection.cursor() 
@@ -18,7 +19,6 @@ def get_pots():
 
 
 
-
 def get_design(design):
     db_connection = sqlite3.connect('creaZ.db')
     db_cursor = db_connection.cursor() 
@@ -29,6 +29,12 @@ def get_design(design):
         temp = list_design[i][0]
         designs.append(temp) 
     return(designs)
+
+def change_pot(pot):
+    print('DATABASE CONNECT:')
+
+    print(pot['pot'])
+    return ""
 
 
 # db_connection = sqlite3.connect('creaZ.db')
