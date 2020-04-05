@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, send_file, request
 from flask_cors import CORS
-from database_connect import get_pots, change_pot
+from database_connect import get_pots, change_pot,get_design
 import sys
 
 
@@ -33,13 +33,15 @@ def my_function():
 def api_change_pot():
     print(request.json)
     print('THIS IS A TEST')
+    global pot_name 
+    pot_name = change_pot(request.json)
     return change_pot(request.json)
 
 
 
-# @app.route('/api/design',  methods=['GET'])
-# def api_design():
-#     return jsonify(get_design())
+@app.route('/api/design',  methods=['GET'])
+def api_design():
+    return jsonify(get_design(pot_name))
 
 # @app.route('/api/main_color',  methods=['GET'])
 # def api_main_color():

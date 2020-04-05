@@ -3,6 +3,7 @@ let design='';
 let main_color='';
 let secondary_color='';
 let countpot=0;
+let  countdesign=0;
 
 $('#hoverlink').hover(function(){
     $('.hover_text_link').toggleClass('show');
@@ -30,11 +31,11 @@ function pot_selector() {
         xhr.responseType = 'json';
         xhr.open("GET", "http://127.0.0.1:5000/api/pots");
         xhr.onload = function () {
-           let lits_pots = xhr.response;
-           for (let i = 0; i < lits_pots.length; i++){
+           let list_pots = xhr.response;
+           for (let i = 0; i < list_pots.length; i++){
                 let paragraph = document.createElement('p');
-                paragraph.textContent = lits_pots[i];
-              paragraph.setAttribute("onclick", "change_pot('"+lits_pots[i]+"')");
+                paragraph.textContent = list_pots[i];
+              paragraph.setAttribute("onclick", "change_pot('"+list_pots[i]+"')");
               document.getElementById('misss').appendChild(paragraph);
             }
         }
@@ -45,6 +46,25 @@ function pot_selector() {
 
 function design_selector() {
     $('.design-selector').toggleClass('show');
+    if (countdesign==0){
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open("GET", "http://127.0.0.1:5000/api/design");
+
+        xhr.onload = function () {
+           let list_design = xhr.response;
+           console.log('list', list_design)
+           for (let i = 0; i < list_design.length; i++){
+            console.log('ET ICI')
+                let paragraph = document.createElement('p');
+                paragraph.textContent = list_design[i];
+              paragraph.setAttribute("onclick", "change_pot('"+list_design[i]+"')");
+              document.getElementById('misss').appendChild(paragraph);
+            }
+        }
+         xhr.send();
+    }
+    countdesign++;
 }
 
 function main_color_selector() {
