@@ -57,6 +57,7 @@ a {
     transition: all .8s ease-in-out;
     background-color: white;
     box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
+    min-height: auto;
 }
 
 .pot-selector.show {
@@ -78,6 +79,7 @@ a {
     background-color: white;
     /* box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09); */
     box-shadow:20px 20px 43px #d4cdcd, -20px -20px 43px #ffffff;
+    min-height: auto;
 }
 
 .design-selector.show {
@@ -98,6 +100,7 @@ a {
     transition: all .8s ease-in-out;
     background-color: white;
     box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
+    min-height: auto;
 }
 
 .main_color-selector.show {
@@ -118,7 +121,8 @@ a {
     transition: all .8s ease-in-out;
     background-color: white;
     box-shadow: -5px 0px 65px rgba(0, 0, 0, 0.09);
-    overflow-y:auto
+    overflow-y:auto;
+    min-height: auto;
 }
 
 .secondary_color-selector.show {
@@ -290,10 +294,21 @@ p {
     margin-top: 200px;
 }
 
-#misss {
+#pot_options {
 background-color: transparent;
 }
 
+#design_options{
+    background-color: transparent;
+}
+
+#main_color_options{
+    background-color: transparent;
+}
+
+#secondary_color_options{
+    background-color: transparent;
+}
 
 /* ELEMENTS SHARE PICTOGRAM */
 

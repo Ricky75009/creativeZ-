@@ -19,10 +19,12 @@ def get_pots():
 
 
 
-def get_design(design):
+def get_design(pot_name):
     db_connection = sqlite3.connect('creaZ.db')
     db_cursor = db_connection.cursor() 
-    db_cursor.execute(f'''SELECT design.design from design LEFT JOIN pot ON pot.ID = design.pot WHERE pot.name = "{design}"''')
+    db_cursor.execute(f'''SELECT design.design from design 
+LEFT JOIN pot ON pot.ID = design.pot
+WHERE pot.name = "{pot_name}"''')
     list_design = db_cursor.fetchall()
     designs=[]
     for i in range (len(list_design)):
@@ -32,21 +34,38 @@ def get_design(design):
 
 def change_pot(pot):
     print('DATABASE CONNECT:')
-
     print(pot['pot'])
     return ""
 
+def get_main_color(pot_name,design):
+    db_connection = sqlite3.connect('creaZ.db')
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'''SELECT main.main_color from main 
+LEFT JOIN DESIGN ON  design.id = main.design_ID
+LEFT JOIN pot ON  pot.id =  design.POT 
+WHERE DESIGN.DESIGN = "{design}" AND pot.NAME="{pot_name}"''')
+    list_main_color = db_cursor.fetchall()
+    main_color = []
+    for i in range (len(list_main_color)):
+        temp = list_main_color[i][0]
+        main_color.append(temp) 
+    return(main_color)
 
-# db_connection = sqlite3.connect('creaZ.db')
+def get_secondary_color(pot_name,design,main_color):
+    db_connection = sqlite3.connect('creaZ.db')
+    db_cursor = db_connection.cursor()
+    db_cursor.execute(f'''SELECT secondary.secondary_color from secondary 
+LEFT JOIN main ON secondary.main_id = main.id
+LEFT JOIN design ON  design.id = main.design_ID
+LEFT JOIN pot ON  pot.id =  design.POT 
+WHERE main.main_color="{main_color}" AND design.design = "{design}" AND pot.NAME="{pot_name}"''')
+    list_secondary_color = db_cursor.fetchall()
+    secondary_color = []
+    for i in range (len(list_secondary_color)):
+        temp = list_secondary_color[i][0]
+        secondary_color.append(temp) 
+    return(secondary_color)
 
-#     # create a database cursor object, which allows us to perform SQL on the database. 
-# db_cursor = db_connection.cursor()
-
-# input_pot=input('What pot ?')
-# db_cursor.execute(f'''SELECT design.design from design 
-# LEFT JOIN pot ON pot.ID = design.pot
-# WHERE pot.name = "{input_pot}"''')
-# list_design = db_cursor.fetchall()
 
 
 
@@ -71,12 +90,7 @@ def change_pot(pot):
 #     main_color.append(temp) 
 # print('Here are the main color possibilities',main_color)
 # input_main=input('What main color ?')
-# db_cursor.execute(f'''SELECT secondary.secondary_color from secondary 
-# LEFT JOIN main ON secondary.main_id = main.id
-# LEFT JOIN design ON  design.id = main.design_ID
-# LEFT JOIN pot ON  pot.id =  design.POT 
-# WHERE main.main_color="{input_main}" AND design.design = "{input_design}" AND pot.NAME="{input_pot}"''')
-# list_secondary_color = db_cursor.fetchall()
+
 
 
 
