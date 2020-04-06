@@ -322,18 +322,34 @@ p1{
 
 #pot_options {
 background-color: transparent;
+cursor: pointer;
 }
 
 #design_options{
     background-color: transparent;
+    cursor: pointer;
 }
 
 #main_color_options{
     background-color: transparent;
+    cursor: pointer;
 }
 
 #secondary_color_options{
     background-color: transparent;
+    cursor: pointer;
+
+}
+#dot{
+width: 12px;
+height: 12px;
+border-radius: 50%;
+margin: 30px;
+display: inline-block;
+border: 1px solid transparent;
+
+
+
 }
 
 /* ELEMENTS SHARE PICTOGRAM */
@@ -569,6 +585,3 @@ bottom: 285px;
     transition: all .555s ease-out;
 }
 
-#pot_presentation{
-    align-items: center;
-}
