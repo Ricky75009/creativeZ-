@@ -32,10 +32,18 @@ function pot_selector() {
         xhr.onload = function () {
            let list_pots = xhr.response;
            for (let i = 0; i < list_pots.length; i++){
+            let image = document.createElement('img');
+            image.setAttribute('src', 'static/assets/flavicons/'+list_pots[i]+'.png');
+            image.setAttribute('alt','flavicon of '+pot);
+            image.setAttribute('margin_top','0px');
+            image.setAttribute('display','absolute');
+            document.getElementById('pot_options').appendChild(image);
+
                 let paragraph = document.createElement('p');
                 paragraph.textContent = list_pots[i];
               paragraph.setAttribute("onclick", "change_pot('"+list_pots[i]+"')");
               document.getElementById('pot_options').appendChild(paragraph);
+              
             }
         }
          xhr.send();
@@ -252,7 +260,6 @@ $('.pfb').toggleClass('show');
 function render(pot,design,main_color,secondary_color){
     $('#image_visualisator').empty();
     let image = document.createElement('img');
-
     image.setAttribute('src', 'static/assets/images_visualisator/'+pot+'-'+design+'-'+main_color+'-'+secondary_color+'.png');
     image.setAttribute('alt','photo of '+pot+' '+design+' '+main_color+' '+secondary_color)
     image.setAttribute('width','550px')
@@ -262,15 +269,3 @@ function render(pot,design,main_color,secondary_color){
 }
 render(pot,design,main_color,secondary_color);
 
-function print_an_image(pot,design){
-if (design=='bicolor'){
-    alert('bicolor error');
-    render(pot,design,'negro','blanco');
-}else if(design=='color sólido'){
-    alert('solido allert');
-    render(pot,design,'negro','');
-}else{
-    alert('Please select appropriate attributes');
-}
-
-}
