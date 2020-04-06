@@ -1,11 +1,8 @@
-let pot='huevo';
-let design='';
-let main_color='';
+let pot='chico angular';
+let design='color sólido';
+let main_color='negro';
 let secondary_color='';
-let countpot=0;
-let  countdesign=0;
-let countmain=0;
-let countsecondary=0;
+
 
 $('#hoverlink').hover(function(){
     $('.hover_text_link').toggleClass('show');
@@ -28,7 +25,7 @@ $('#hoverfb').hover(function(){
 function pot_selector() {
 
     $('.pot-selector').toggleClass('show');
-    if (countpot==0){
+    $('#pot_options').empty();
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.open("GET", "http://127.0.0.1:5000/api/pots");
@@ -42,55 +39,34 @@ function pot_selector() {
             }
         }
          xhr.send();
-    }
-    countpot++;
-    countdesign=countmain=countsecondary=0;
+
 }
 
 function design_selector() {
     $('.design-selector').toggleClass('show');
-    if (countdesign==0){
-        let xhr = new XMLHttpRequest();
-        xhr.responseType = 'json';
-        xhr.open("GET", "http://127.0.0.1:5000/api/design");
-
-        xhr.onload = function () {
-           let list_design = xhr.response;
-           console.log('list', list_design)
-           for (let i = 0; i < list_design.length; i++){
-            console.log('ET ICI')
-                let paragraph = document.createElement('p');
-                paragraph.textContent = list_design[i];
-              paragraph.setAttribute("onclick", "change_design('"+list_design[i]+"')");
-              document.getElementById('design_options').appendChild(paragraph);
-            }
-        }
-         xhr.send();
-         countdesign++;
-    }else{
-        var element = document.getElementById('design_options');
-        element.parentNode.removeChild(element);
-        let xhrxhr = new XMLHttpRequest();
-        xhrxhr.responseType = 'json';
-        xhrxhr.open("GET", "http://127.0.0.1:5000/api/design");
-        xhrxhr.onload = function () {
-           let list_design = xhrxhr.response;
-           console.log('list', list_design)
-           for (let i = 0; i < list_design.length; i++){
-            console.log('ET ICI')
+    $('#design_options').empty();
+    let xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open("GET", "http://127.0.0.1:5000/api/design");
+    xhr.onload = function () {
+        let list_design = xhr.response;
+        console.log('list', list_design)
+        for (let i = 0; i < list_design.length; i++){
             let paragraph = document.createElement('p');
             paragraph.textContent = list_design[i];
             paragraph.setAttribute("onclick", "change_design('"+list_design[i]+"')");
             document.getElementById('design_options').appendChild(paragraph);
-            }
         }
-         xhr.send();
     }
+    xhr.send();
+
+
 }
 
 function main_color_selector() {
     $('.main_color-selector').toggleClass('show');
-    if (countmain==0){
+    $('#main_color_options').empty();
+
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.open("GET", "http://127.0.0.1:5000/api/main_color");
@@ -104,14 +80,12 @@ function main_color_selector() {
             }
         }
          xhr.send();
-    }
-    countmain++;
-    countdesign=countpot=countsecondary=0;
+
 }
 
 function secondary_color_selector() {
     $('.secondary_color-selector').toggleClass('show');
-    if (countsecondary==0){
+    $('#secondary_color_options').empty();
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.open("GET", "http://127.0.0.1:5000/api/secondary_color");
@@ -125,9 +99,7 @@ function secondary_color_selector() {
             }
         }
          xhr.send();
-    }
-    countsecondary++;
-    countdesign=countmain=countpot=0;
+
 }
 
 function change_pot(pot_temp) {
@@ -140,6 +112,7 @@ function change_pot(pot_temp) {
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'pot': pot }));
 
+    render(pot,design,main_color,secondary_color);
 
 }
 
@@ -153,7 +126,7 @@ function change_design(design_temp){
     xhr.open("POST", 'http://127.0.0.1:5000/api/change_design');
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'design': design }));
-
+    render(pot,design,main_color,secondary_color);
 }
 
 function change_main_color(main_color_temp){
@@ -166,6 +139,7 @@ function change_main_color(main_color_temp){
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'main_color': main_color }));
 
+    render(pot,design,main_color,secondary_color);
 }
 
 function change_secondary_color(secondary_color_temp){
@@ -178,15 +152,13 @@ function change_secondary_color(secondary_color_temp){
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'secondary_color': secondary_color }));
 
+    render (pot,design,main_color,secondary_color);
 }
 
 function back(tab){
     $('.'+tab).toggleClass('show');
 }
 
-function render(){
-
-}
 
 function share(){
     
@@ -263,7 +235,6 @@ document.body.removeChild(test);
 $('.facebook').toggleClass('show');
 $('.twitter').toggleClass('show');
 $('.link').toggleClass('show');
-
 $('#arrow').toggleClass('show');
 $('#arrow_2').toggleClass('show');
 $('.small_lines').toggleClass('show');
@@ -278,20 +249,28 @@ $('.ptwitter').toggleClass('show');
 $('.pfb').toggleClass('show');
 }
 
-function get_all_pots(){
-    let xhr = new XMLHttpRequest();
-    xhr.responseType = 'json';
-    xhr.open("GET", "http://127.0.0.1:5000/api/pots")
-    xhr.onload = function () {
-        let lits_pots = xhr.response;
-        for (let i = 0; i < lits_pots.length; i++){
-            let paragraph = document.createElement('p');
-            paragraph.textContent = lits_pots[i];
-            paragraph.setAttribute("onclick", "love()");
-            document.getElementById('misss').appendChild(paragraph);
-        }
-    }
-    xhr.send();
-    $('.pot-selector').toggleClass('show');
+function render(pot,design,main_color,secondary_color){
+    $('#image_visualisator').empty();
+    let image = document.createElement('img');
+
+    image.setAttribute('src', 'static/assets/images_visualisator/'+pot+'-'+design+'-'+main_color+'-'+secondary_color+'.png');
+    image.setAttribute('alt','photo of '+pot+' '+design+' '+main_color+' '+secondary_color)
+    image.setAttribute('width','550px')
+    image.setAttribute('onerror','print_an_image("'+pot+'","'+design+'")')
+    document.getElementById('image_visualisator').appendChild(image);
+
+}
+render(pot,design,main_color,secondary_color);
+
+function print_an_image(pot,design){
+if (design=='bicolor'){
+    alert('bicolor error');
+    render(pot,design,'negro','blanco');
+}else if(design=='color sólido'){
+    alert('solido allert');
+    render(pot,design,'negro','');
+}else{
+    alert('Please select appropriate attributes');
 }
 
+}

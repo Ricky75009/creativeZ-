@@ -1,15 +1,17 @@
-import sqlite3
+x=2
 
 
-db_connection = sqlite3.connect('creaZ.db')
+def func():
+    global x
+    x=27
+    return x
 
-# create a database cursor object, which allows us to perform SQL on the database. 
-db_cursor = db_connection.cursor()
+func()
 
-input_pot=input('What pot ?')
-db_cursor.execute(f'''SELECT design.design from design 
-LEFT JOIN pot ON pot.ID = design.pot
-WHERE pot.name = "{input_pot}"''')
-list_design = db_cursor.fetchall()
+print('x',x)
 
-print(list_design)
+x=12
+
+print('x=',x)
+
+print(func())

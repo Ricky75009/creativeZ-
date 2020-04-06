@@ -3,7 +3,10 @@ from flask_cors import CORS
 from database_connect import get_pots, change_pot,get_design, get_main_color, get_secondary_color
 import sys
 
-
+pot_name='chico angular'
+design='color sólido'
+main_color='negro'
+secondary_color=''
 
 app = Flask(__name__)
 @app.route('/')
@@ -62,6 +65,7 @@ def api_change_secondary_color():
     secondary_color = request.json['secondary_color']
     print('SECONDARYYYYYY IS ', secondary_color)
     return ''
+
 
 
 if __name__ == '__main__':
