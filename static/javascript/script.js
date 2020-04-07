@@ -84,17 +84,20 @@ function main_color_selector() {
            for (let i = 0; i < list_main_color.length; i++){
                let div=document.createElement('div');
                div.setAttribute('id',list_main_color[i]);
-               div.setAttribute('height','2Opx');
+               div.setAttribute('display','inline-block');
                document.getElementById('main_color_options').appendChild(div);
 
                let dot =document.createElement('div');
                dot.setAttribute('id','dot');
                dot.setAttribute('style','background-color:red');
                
+               
                 let paragraph = document.createElement('p');
                 paragraph.textContent = list_main_color[i];
               paragraph.setAttribute("onclick", "change_main_color('"+list_main_color[i]+"')");
-              paragraph.setAttribute('display','inline-block');
+              paragraph.setAttribute('float','left');
+              paragraph.setAttribute('style','margin-left:200px');
+
               
               $('#'+list_main_color[i]).append(dot,paragraph);
             }

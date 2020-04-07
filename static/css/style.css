@@ -291,6 +291,7 @@ a {
     text-align: center;
 }
 
+
 p {
     color: #000000;
     font-family: Akkurat;
@@ -333,23 +334,22 @@ cursor: pointer;
 #main_color_options{
     background-color: transparent;
     cursor: pointer;
+    float: center;
 }
 
 #secondary_color_options{
     background-color: transparent;
     cursor: pointer;
-
 }
+
 #dot{
 width: 12px;
 height: 12px;
 border-radius: 50%;
-margin: 30px;
-display: inline-block;
 border: 1px solid transparent;
-
-
-
+margin-right: 10px;
+margin-left: 50%;
+float: left;
 }
 
 /* ELEMENTS SHARE PICTOGRAM */
@@ -584,4 +584,6 @@ bottom: 285px;
     bottom: 280px;
     transition: all .555s ease-out;
 }
+
+
 
