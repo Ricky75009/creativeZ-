@@ -122,6 +122,14 @@ function main_color_selector() {
 function secondary_color_selector() {
     $('.secondary_color-selector').toggleClass('show');
     $('#secondary_color_options').empty();
+    let list_hex
+    let xhr_hex = new XMLHttpRequest();
+    xhr_hex.responseType = 'json';
+    xhr_hex.open("GET", "http://127.0.0.1:5000/api/secondary_color_hex");
+    xhr_hex.onload= function(){
+    list_hex = xhr_hex.response;}
+    xhr_hex.send();
+    alert('alert')
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.open("GET", "http://127.0.0.1:5000/api/secondary_color");
@@ -130,8 +138,23 @@ function secondary_color_selector() {
            for (let i = 0; i < list_secondary_color.length; i++){
                 let paragraph = document.createElement('p');
                 paragraph.textContent = list_secondary_color[i];
-              paragraph.setAttribute("onclick", "change_secondary_color('"+list_secondary_color[i]+"')");
+
+              div.setAttribute('display','inline-block');
               document.getElementById('secondary_color_options').appendChild(paragraph);
+
+              let dot =document.createElement('div');
+              dot.setAttribute('id','dot');
+              dot.setAttribute('style','background-color:#'+list_hex[i]);
+              
+              
+               let paragraph = document.createElement('p');
+               paragraph.textContent = list_secondary_color[i];
+             paragraph.setAttribute("onclick", "change_secondary_color('"+list_secondary_color[i]+"')");
+             paragraph.setAttribute('float','left');
+             paragraph.setAttribute('style','margin-left:200px');
+
+             
+             $('#'+list_secondary_color[i]).append(dot,paragraph);
             }
         }
          xhr.send();

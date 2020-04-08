@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, send_file, request
 from flask_cors import CORS
-from database_connect import get_pots, change_pot,get_design, get_main_color, get_secondary_color
+from database_connect import get_pots, change_pot,get_design, get_main_color, get_secondary_color, get_main_color_hex, get_secondary_color_hex
 import sys
 
 pot_name='chico angular'
@@ -46,6 +46,10 @@ def api_change_design():
 def api_main_color():
     return jsonify(get_main_color(pot_name,design))
 
+@app.route('/api/main_color_hex',  methods=['GET'])
+def api_main_color_hex():
+    return jsonify(get_main_color_hex(pot_name,design))
+
 @app.route('/api/change_main_color', methods=['POST'])
 def api_change_main_color():
     global main_color
@@ -57,6 +61,10 @@ def api_change_main_color():
 @app.route('/api/secondary_color',  methods=['GET'])
 def api_second_color():
     return jsonify(get_secondary_color(pot_name,design,main_color))
+
+@app.route('/api/secondary_color_hex',  methods=['GET'])
+def api_second_color_hex():
+    return jsonify(get_secondary_color_hex(pot_name,design,main_color))  
 
 
 @app.route('/api/change_secondary_color', methods=['POST'])
