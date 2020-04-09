@@ -1,25 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lan='en'>
   <head>
     <title>Catalogue Z+</title>
-
-    <!-- Without working with app.py 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script async type="text/javascript" src="javascript/script.js"></script>
-    -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- IMPORTING CSS FILE--> 
     <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+
+    <!-- IMPORTING JQUERY AND JAVSCRIPT FILES--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script async type="text/javascript" src="/static/javascript/script.js"></script>
   </head>
-  <textarea id="linktext">http://catalogo.kindler.design</textarea>
-  <body>
-    <textarea style="font-size: 0,00000001 px" ; id="test">
-http://catalogo.kindler.design </textarea>
 
+  <!-- TEXTAREA TO COPY THE LINK--> 
+  <textarea style="font-size: 0, 00000001 px;" ; id="copy">http://creative.kindler.design </textarea>
+ 
+  <body>
+
+    <!-- VISUALISATION PART--> 
     <div id="visualisator">
       <p id="logo">Z+</p>
 
       <!-- SHARE FUNCTION -->
+
+      <!-- COPY THE LINK--> 
       <div onclick="link()">
         <div class="placing">
           <div class="hover_text_link">copy the link</div>
@@ -27,10 +29,11 @@ http://catalogo.kindler.design </textarea>
         </div>
         <div id="hoverlink">
           <button type="submit" ; class="link" ; value="share" ;></button>
-          <img src="static/assets/lien.png" ; alt="link picture" ; class="plink" />
+          <img src="static/assets/sharepics/lien.png"; alt="link picture" ; class="plink"/>
         </div>
       </div>
-
+      
+      <!-- OPEN TWITTER IN A WINDOW TO TWEET--> 
       <div onclick="twitter()">
         <div class="placing">
           <div class="hover_text_twitter">tweet</div>
@@ -38,15 +41,10 @@ http://catalogo.kindler.design </textarea>
         </div>
         <div id="hovertwitter">
           <button type="submit" ; class="twitter" ; value="share"></button>
-          <img
-            src="static/assets/twitter.png"
-            ;
-            alt="twitter picture"
-            ;
-            class="ptwitter"
-          />
+          <img src="static/assets/sharepics/twitter.png"; alt="twitter picture"; class="ptwitter"/>
         </div>
       </div>
+      <!-- OPEN FACEBOOK IN A WINDOW TO SHARE--> 
       <div onclick="facebook()">
         <div class="placing">
           <div class="hover_text_fb">share on facebook</div>
@@ -54,9 +52,10 @@ http://catalogo.kindler.design </textarea>
         </div>
         <div id="hoverfb">
           <button type="submit" ; class="facebook" ;value="share"></button>
-          <img src="static/assets/fb.png" ; alt="link picture" ; class="pfb" />
+          <img src="static/assets/sharepics/fb.png" ; alt="link picture" ; class="pfb" />
         </div>
       </div>
+      <!-- SHARE BUTTON--> 
       <div onclick="share()">
         <button type="submit" ; class="share" ; value="share"></button>
         <div class="lines" ; id="cross"></div>
@@ -68,82 +67,64 @@ http://catalogo.kindler.design </textarea>
         <div class="small_lines" ; id="small_line"></div>
         <div class="small_lines" ; id="small_line_2"></div>
       </div>
-
-      <div class='vertcenter';  id='image_visualisator'>
-
-      </div>
-      <!-- DONE BUTTON -->
-
-  
-        <button type="submit" ; onclick='test()'; id="done" ; value="done">done</button>
-     
-
-
+      <!-- RENDERED IMAGE-->
+      <div class="top_margin" ; id="image_visualisator"></div>
+      <!-- DONE BUTTON-->
+      <button type="submit" ; onclick="test()" ; id="done" ; value="done">done</button></div>
     </div>
 
-
-
-    <!-- SIDEBAR TO PERSONNALIZE -->
+    <!-- SIDEBAR PART -->
+    <!-- MAIN MENU SELECTOR WINDOW--> 
     <div id="sidebar">
-      <div  class="vertcenter"; style="text-align: center;">
+      <div id='container'; class="top_margin">
         <div class="pot_selection">
           <p onclick="javascript:pot_selector()">pot selection</p>
         </div>
-        <div  class="design">
-          <p onclick="javascript:design_selector();">design</p>
+        <div class="design">
+          <p onclick="javascript:design_selector()">design</p>
         </div>
         <div class="main_color">
-          <p onclick="javascript:main_color_selector();">main color</p>
+          <p onclick="javascript:main_color_selector()">main color</p>
         </div>
         <div class="secondary_color">
-          <p onclick="javascript:secondary_color_selector();">secondary color</p>
+          <p onclick="javascript:secondary_color_selector()">secondary color</p>
         </div>
       </div>
     </div>
 
+    <!-- POT SELECTOR WINDOW--> 
     <div class="pot-selector">
-      <button type="submit"; id="back_button"; onclick="back('pot-selector')";value="back_pot"> &gt;</button>
-      <div id="container" ; class="vertcenter">
-        
-        <div id="pot_options" >
-          
-          <!--
-          <p onclick='javascript:change_pot("pot")'>pot</p>
-          <p onclick="javascript:change_pot('pot2');">pot2</p>
-          <p onclick="javascript:change_pot('pot3');">pot3</p>
-          <p onclick="javascript:change_pot('pot4');">pot4</p> -->
-
-          </div>
+      <!-- BACK BUTTON--> 
+      <button type="submit"; id="back_button"; onclick="back('pot-selector')"; value="back_pot"> &gt;</button>
+      <div id="container" ; class="top_margin">
+        <div id="pot_options"></div>
       </div>
     </div>
+
+    <!-- DESINGN SELECTOR WINDOW--> 
     <div class="design-selector">
-      <button type="submit" ; id="back_button" ;
-        onclick="back('design-selector')"; value="back_design"> &gt; </button>
-      <div id="container" ; class="vertcenter">
-        <div id='design_options'>
-
-          
-        </div>
+      <!-- BACK BUTTON--> 
+      <button type="submit"; id="back_button"; onclick="back('design-selector')"; value="back_design"> &gt; </button>
+      <div id="container" ; class="top_margin">
+        <div id="design_options"></div>
       </div>
     </div>
 
+    <!-- MAIN COLOR SELECTOR WINDOW--> 
     <div class="main_color-selector">
-      <button type="submit" ; id="back_button" ;
-        onclick="back('main_color-selector')"; value="back_design"> &gt; </button>
-      <div   class="vertcenter">
-
-        <div id="main_color_options">
-
-        </div>
+      <!-- BACK BUTTON--> 
+      <button type="submit"; id="back_button"; onclick="back('main_color-selector')"; value="back_design"> &gt;</button>
+      <div class="top_margin">
+        <div id="main_color_options"></div>
       </div>
     </div>
 
+    <!-- SECONDARY COLOR SELECTOR WINDOW--> 
     <div class="secondary_color-selector">
-      <button type="submit" ; id="back_button" ; onclick="back('secondary_color-selector')" ; value="back_secondary_color" >&gt;</button>
-      <div  class="vertcenter">
-        <div id="secondary_color_options">
-          
-        </div>
+      <!-- BACK BUTTON--> 
+      <button type="submit"; id="back_button"; onclick="back('secondary_color-selector')";value="back_secondary_color">&gt;</button>
+      <div class="top_margin">
+        <div id="secondary_color_options"></div>
       </div>
     </div>
   </body>
