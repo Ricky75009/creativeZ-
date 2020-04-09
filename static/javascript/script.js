@@ -28,7 +28,7 @@ function pot_selector() {
     $('#pot_options').empty();
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open("GET", "http://127.0.0.1:5000/api/pots");
+        xhr.open("GET", "/api/pots");
         xhr.onload = function () {
            let list_pots = xhr.response;
            for (let i = 0; i < list_pots.length; i++){
@@ -56,7 +56,7 @@ function design_selector() {
     $('#design_options').empty();
     let xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
-    xhr.open("GET", "http://127.0.0.1:5000/api/design");
+    xhr.open("GET", "/api/design");
     xhr.onload = function () {
         let list_design = xhr.response;
         console.log('list', list_design)
@@ -78,14 +78,14 @@ function main_color_selector() {
     let list_hex
     let xhr_hex = new XMLHttpRequest();
     xhr_hex.responseType = 'json';
-    xhr_hex.open("GET", "http://127.0.0.1:5000/api/main_color_hex");
+    xhr_hex.open("GET", "/api/main_color_hex");
     xhr_hex.onload= function(){
     list_hex = xhr_hex.response;}
     xhr_hex.send();
 
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open("GET", "http://127.0.0.1:5000/api/main_color");
+        xhr.open("GET", "/api/main_color");
 
 
         
@@ -130,14 +130,14 @@ function secondary_color_selector() {
     let list_shex
     let xhr_shex = new XMLHttpRequest();
     xhr_shex.responseType = 'json';
-    xhr_shex.open("GET", "http://127.0.0.1:5000/api/secondary_color_hex");
+    xhr_shex.open("GET", "/api/secondary_color_hex");
     xhr_shex.onload= function(){
     list_shex = xhr_shex.response;}
     xhr_shex.send();
     
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open("GET", "http://127.0.0.1:5000/api/secondary_color");
+        xhr.open("GET", "/api/secondary_color");
         xhr.onload = function () {
            let list_secondary_color = xhr.response;
            for (let i = 0; i < list_secondary_color.length; i++){
@@ -173,7 +173,7 @@ function change_pot(pot_temp) {
     secondary_color='';
 
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://127.0.0.1:5000/api/change_pot');
+    xhr.open("POST", '/api/change_pot');
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'pot': pot }));
 
@@ -190,7 +190,7 @@ function change_design(design_temp){
     secondary_color='';
 
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://127.0.0.1:5000/api/change_design');
+    xhr.open("POST", '/api/change_design');
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'design': design }));
     render(pot,design,main_color,secondary_color);
@@ -203,7 +203,7 @@ function change_main_color(main_color_temp){
     main_color=main_color_temp;
 
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://127.0.0.1:5000/api/change_main_color');
+    xhr.open("POST", '/api/change_main_color');
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'main_color': main_color }));
 
@@ -216,7 +216,7 @@ function change_secondary_color(secondary_color_temp){
     secondary_color=secondary_color_temp;
 
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://127.0.0.1:5000/api/change_secondary_color');
+    xhr.open("POST", '/api/change_secondary_color');
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify({ 'secondary_color': secondary_color }));
 
