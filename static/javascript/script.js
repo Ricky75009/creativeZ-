@@ -198,8 +198,7 @@ function change_pot(pot_temp) {
   $(".pot-selector").toggleClass("show");
   console.log(`pot changed to ${pot_temp}`);
   pot = pot_temp;
-  main_color = "negro";
-  secondary_color = "";
+
 
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "/api/change_pot");
@@ -214,8 +213,7 @@ function change_design(design_temp) {
   $(".design-selector").toggleClass("show");
   console.log(`design changed to ${design_temp}`);
   design = design_temp;
-  main_color = "negro";
-  secondary_color = "";
+
 
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "/api/change_design");
@@ -230,6 +228,7 @@ function change_main_color(main_color_temp) {
   console.log(`main color changed to ${main_color_temp}`);
   main_color = main_color_temp;
 
+  
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "/api/change_main_color");
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
