@@ -91,7 +91,7 @@ function design_selector() {
 function main_color_selector() {
   $(".main_color-selector").toggleClass("show");
   $("#main_color_options").empty();
-  let list_hex;
+  let list_hex='';
   let xhr_hex = new XMLHttpRequest();
   xhr_hex.responseType = "json";
   xhr_hex.open("GET", "/api/main_color_hex");
@@ -99,6 +99,7 @@ function main_color_selector() {
     list_hex = xhr_hex.response;
   };
   xhr_hex.send();
+ 
 
   let xhr = new XMLHttpRequest();
   xhr.responseType = "json";
@@ -144,13 +145,16 @@ function secondary_color_selector() {
   $(".secondary_color-selector").toggleClass("show");
   $("#secondary_color_options").empty();
 
-  let list_shex;
+  let list_shex='';
   let xhr_shex = new XMLHttpRequest();
   xhr_shex.responseType = "json";
   xhr_shex.open("GET", "/api/secondary_color_hex");
   xhr_shex.onload = function () {
     list_shex = xhr_shex.response;
+
   };
+  
+
   xhr_shex.send();
 
   let xhr = new XMLHttpRequest();
@@ -186,7 +190,7 @@ function secondary_color_selector() {
     }
   };
   xhr.send();
-  alert(list_secondary_color);
+
 }
 
 /* CHANGE THE POT GLOBAL VARIABLE IN THE JAVASCRIPT FILE AND IN THE BACKEND*/
@@ -368,13 +372,27 @@ function render(pot, design, main_color, secondary_color) {
     "photo of " + pot + " " + design + " " + main_color + " " + secondary_color
   );
   image.setAttribute("width", "550px");
-  image.setAttribute(
-    "onerror",
-    'print_an_image("' + pot + '","' + design + '")'
-  );
+  image.setAttribute("onerror",'print_an_image("' + pot + '","' + design + '")');
   document.getElementById("image_visualisator").appendChild(image);
 }
 
+function print_an_image(pot,design){
+  $("#image_visualisator").empty();
+  let image = document.createElement("img");
+  image.setAttribute(
+    "src",
+    "static/assets/images_visualisator/" +
+      pot +
+      "-color sólido" +
+      "-negro-"+".png"
+  );
+  image.setAttribute(
+    "alt",
+    "photo of " + pot + " " + design
+  );
+  image.setAttribute("width", "550px");
+  document.getElementById("image_visualisator").appendChild(image);
+}
 /* WHEN DONE BUTTON IS CLICKED...*/
 function done() {
   alert("THIS IS DONE");
