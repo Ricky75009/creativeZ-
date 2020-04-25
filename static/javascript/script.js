@@ -3,6 +3,8 @@ let pot = "chico angular";
 let design = "color sólido";
 let main_color = "negro";
 let secondary_color = "";
+let path = "static/assets/images_visualisator/"+pot+"-"+design+"-"+main_color+"-"+secondary_color+".png"
+
 
 /* SHOW 'COPY LINK'*/
 $("#hoverlink").hover(
@@ -373,6 +375,8 @@ function render(pot, design, main_color, secondary_color) {
   image.setAttribute("width", "550px");
   image.setAttribute("onerror",'print_an_image("' + pot + '","' + design + '")');
   document.getElementById("image_visualisator").appendChild(image);
+
+  path = "static/assets/images_visualisator/"+pot+"-"+design+"-"+main_color+"-"+secondary_color+".png"
 }
 
 function print_an_image(pot,design){
