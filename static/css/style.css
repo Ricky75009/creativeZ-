@@ -152,6 +152,7 @@
 #secondary_color_options {
     background-color: transparent;
     cursor: pointer;
+    float: center;
 }
 
 #dot {
@@ -165,6 +166,12 @@
 }
 
 /* BUTTONS */
+
+#biteeeeeee{
+
+    color: darkgreen;
+    font-size: 34px;
+}
 
 #done {
     text-align: center;

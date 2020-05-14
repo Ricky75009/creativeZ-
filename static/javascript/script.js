@@ -109,6 +109,7 @@ function main_color_selector() {
 
   xhr.onload = function () {
     let list_main_color = xhr.response;
+    console.log("list", list_main_color);
     for (let i = 0; i < list_main_color.length; i++) {
       let div = document.createElement("div");
       div.setAttribute("id", list_main_color[i]);
@@ -155,8 +156,6 @@ function secondary_color_selector() {
     list_shex = xhr_shex.response;
 
   };
-  
-
   xhr_shex.send();
 
   let xhr = new XMLHttpRequest();
@@ -164,21 +163,25 @@ function secondary_color_selector() {
   xhr.open("GET", "/api/secondary_color");
   xhr.onload = function () {
     let list_secondary_color = xhr.response;
+    console.log("list", list_secondary_color);
+    console.log("hex", list_shex);
     for (let i = 0; i < list_secondary_color.length; i++) {
       let div = document.createElement("div");
       div.setAttribute("id", list_secondary_color[i]);
       div.setAttribute("display", "inline-block");
       document.getElementById("secondary_color_options").appendChild(div);
-
       let dot = document.createElement("div");
       dot.setAttribute("id", "dot");
       if (list_shex[i] == "ffffff") {
         dot.setAttribute(
           "style",
           "background-color:#" + list_shex[i] + ";border: 2px solid black;"
+          
         );
+        console.log('hex : '+list_shex[i]);
       } else {
         dot.setAttribute("style", "background-color:#" + list_shex[i]);
+        console.log('hex : '+list_shex[i]);
       }
       let paragraph = document.createElement("p");
       paragraph.textContent = list_secondary_color[i];
@@ -373,10 +376,15 @@ function render(pot, design, main_color, secondary_color) {
     "photo of " + pot + " " + design + " " + main_color + " " + secondary_color
   );
   image.setAttribute("width", "550px");
-  image.setAttribute("onerror",'print_an_image("' + pot + '","' + design + '")');
+  // image.setAttribute("onerror",'print_an_image("' + pot + '","' + design + '")');
   document.getElementById("image_visualisator").appendChild(image);
 
   path = "static/assets/images_visualisator/"+pot+"-"+design+"-"+main_color+"-"+secondary_color+".png"
+
+  $("#done").removeAttr("href");
+  $("#done").attr("href",path);
+  // $("#bite").setAttr("class","love");
+  
 }
 
 function print_an_image(pot,design){
